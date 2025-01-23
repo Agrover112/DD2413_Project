@@ -1,5 +1,5 @@
 # Social Robotics Project
-
+General architecture of generating Speech and Facial expressions using an LLM such as GPT-3.5/etc.
 ![802ebe3d213260ac2e703f81092d25f4b9e42b15](https://github.com/user-attachments/assets/7c16d10c-f1aa-4b21-9266-954c2e987ef2)
 
 
@@ -8,7 +8,7 @@ https://www.youtube.com/watch?v=vrSQJHgEsWs
 
 ## Getting Started: 
 
-the program can be started using python3. You dont need to pass any parameters: 
+The program can be started using python3. You dont need to pass any parameters: 
 
 ```
 python main.py
