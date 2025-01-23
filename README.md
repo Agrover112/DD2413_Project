@@ -66,7 +66,7 @@ In theory this could (and should) be distributed into different files, also to e
 
 9. Start main() to execute the program.
 
-## dependencies 
+## Dependencies 
 
 The following libraries are required to run the program: 
 
