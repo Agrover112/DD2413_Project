@@ -7,7 +7,7 @@ Refer to the Demo video here
 https://www.youtube.com/watch?v=vrSQJHgEsWs
 
 
-# Main Programm 
+# Main Program
 
 the main programm can be found under /project/main.py. Here, the main function, classes and the tree is defined. 
 In theory this could (and should) be distributed into different files, also to enhance the readability. But due to time constraints, the refactoring process was delayed. 
