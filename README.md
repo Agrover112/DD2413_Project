@@ -6,74 +6,16 @@
 Refer to the Demo video here
 https://www.youtube.com/watch?v=vrSQJHgEsWs
 
+## Getting Started: 
 
-# Main Program
+the program can be started using python3. You dont need to pass any parameters: 
 
-the main programm can be found under /project/main.py. Here, the main function, classes and the tree is defined. 
-In theory this could (and should) be distributed into different files, also to enhance the readability. But due to time constraints, the refactoring process was delayed. 
-
-## General description of the program
-1. Import required libraries and modules.
-2. Load environment variables for API keys.
-3. Initialize APIs and assistants for interaction (FurhatRemoteAPI and OpenAI).
-
-4. Define global variables:
-   - Current assistant
-   - Thread for communication
-   - Running state
-
-5. Define *Classes*:
-   - retrievedObject:
-     - Stores questions, expressions, and game status.
-   - GameState:
-     - Tracks game details such as scores, interaction counts, and history.
-   - furHatMediator:
-     - Handles communication between the robot and the system.
-   - Several py_trees.behaviour classes for different tasks:
-     - updAttendance: Updates user attendance.
-     - furHatSays: Makes the robot speak.
-     - furHatAsks: Makes the robot ask a question.
-     - furHatListens: Makes the robot listen to responses.
-     - setupGame: Initializes game settings based on user input.
-     - closeGame: Ends the game.
-     - isGameWonNode: Checks if the game is won.
-     - furHatExpressEmotions: Makes the robot show emotions.
-     - updateAndRetrieveAssistantsQuestion: Interacts with OpenAI to get questions.
-     - sendPlayerResponseToLLM: Sends player responses to the assistant.
-     - triggerAssistantMessage: Sends messages and retrieves responses.
-     - updateQuestionsAsked: Keeps track of question count.
-     - finishGameIntro: Marks game introduction as complete.
-
-6. Define *Game Behaviors*:
-   - makeLastGuess():
-     - Attempts the final guess based on collected answers.
-     - Checks if the game is won or lost and ends accordingly.
-   - startGuessingRound():
-     - Handles rounds of guessing.
-     - Updates question counters and expressions based on interactions.
-   - startCelebrityGuessingGame():
-     - Manages a celebrity guessing game.
-     - Introduces the game and switches between rounds or guessing attempts.
-   - startObjectDetectionGame():
-     - Manages an object detection guessing game with similar logic to the celebrity game.
-
-7. Define *Tree Construction*:
-   - create_root():
-     - Builds a behavior tree that organizes tasks.
-     - Adds nodes for attendance, welcome messages, game setup, and game selection.
-
-8. Main Program:
-   - Initialize blackboard variables for shared state tracking.
-   - Create root behavior tree.
-   - Set up and execute the tree with a loop until the game ends or interrupted.
-   - Print debug information about tree status and activity logs after each tick.
-
-9. Start main() to execute the program.
-
+```
+python main.py
+```
 ## Dependencies 
 
-The following libraries are required to run the program: 
-
+The following libraries are required to run the program. Sadly no requirements file is provided: 
 - operator
 - py_trees
 - os
@@ -84,8 +26,66 @@ The following libraries are required to run the program:
 - datetime 
 - re
 
-## How to start: 
+# Main Program
 
-the program can be started using python3. You dont need to pass any parameters: 
+the main programm can be found under /project/main.py. Here, the main function, classes and the tree is defined. 
+In theory this could (and should) be distributed into different files, also to enhance the readability. But due to time constraints, the refactoring process was delayed. 
 
-python main.py
+## Program Description
+
+### 1. Initial Setup
+- Import libraries and modules
+- Load API key environment variables
+- Initialize APIs (FurhatRemoteAPI, OpenAI)
+
+### 2. Global Variables
+- Current assistant
+- Communication thread
+- Running state
+
+### 3. Key Classes
+#### Object Classes
+- `retrievedObject`: Stores game questions, expressions, status
+- `GameState`: Tracks scores, interactions, history
+- `furHatMediator`: Manages robot-system communication
+
+#### Behavior Classes (py_trees.behaviour)
+- `updAttendance`: Update user attendance
+- `furHatSays`: Robot speech
+- `furHatAsks`: Robot questioning
+- `furHatListens`: Response listening
+- `setupGame`: Initialize game settings
+- `closeGame`: Game termination
+- `isGameWonNode`: Win condition check
+- `furHatExpressEmotions`: Robot emotion display
+- `updateAndRetrieveAssistantsQuestion`: OpenAI question retrieval
+- `sendPlayerResponseToLLM`: Player response transmission
+- `triggerAssistantMessage`: Message sending/retrieval
+- `updateQuestionsAsked`: Question tracking
+- `finishGameIntro`: Introduction completion
+
+### 4. Game Behaviors
+- `makeLastGuess()`: Final guess attempt
+- `startGuessingRound()`: Guessing round management
+- `startCelebrityGuessingGame()`: Celebrity guessing game
+- `startObjectDetectionGame()`: Object detection game
+
+### 5. Tree Construction
+- `create_root()`: Behavior tree organization
+  - Attendance tracking
+  - Welcome messages
+  - Game setup
+  - Game selection
+
+### 6. Main Program Flow
+1.Initialize blackboard variables
+
+2.Create root behavior tree
+
+3.Execute tree with continuous loop
+
+4.Debug tree status and activity logs
+
+5.Start main() execution
+
+
