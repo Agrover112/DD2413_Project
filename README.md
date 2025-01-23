@@ -1,4 +1,8 @@
-# Demo
+# Social Robotics Project
+
+![802ebe3d213260ac2e703f81092d25f4b9e42b15](https://github.com/user-attachments/assets/7c16d10c-f1aa-4b21-9266-954c2e987ef2)
+
+
 Refer to the Demo video here
 https://www.youtube.com/watch?v=vrSQJHgEsWs
 
